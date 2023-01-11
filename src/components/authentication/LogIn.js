@@ -10,7 +10,6 @@ const LogIn = () => {
   const [password, setPassowrd] = useState('');
   const state = useSelector((state) => state.UserReducer);
   const { loggedIn } = state;
-  // const [signedInSuccess, setSignedInSuccess] = useState(loggedIn);
   const loginUser = (e) => {
     e.preventDefault();
     if (email === '' || password === '') return;
@@ -28,7 +27,7 @@ const LogIn = () => {
       navigate('/user/dashboard', { replace: true });
     }
     if (loggedIn === 'err') {
-      // setSignedInSuccess(loggedIn);
+      navigate('/user/login', { replace: true });
     }
   }, [state]);
 

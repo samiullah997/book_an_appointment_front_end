@@ -11,7 +11,6 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.UserReducer);
   const { signedUp } = state;
-  // const [signedInSuccess, setSignUpSucess] = useState(signedUp);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassowrd] = useState('');
@@ -37,7 +36,6 @@ const SignUp = () => {
   };
 
   useEffect(() => {
-    // setSignUpSucess(() => [signedUp]);
     if (signedUp === 'up') {
       setTimeout(() => goToHomePage(), 3000);
     }
