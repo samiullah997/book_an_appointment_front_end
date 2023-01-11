@@ -22,7 +22,7 @@ const SideBar = () => (
         <FaVine />
         <FaPinterestP />
       </div>
-      <small>&copy; 2022 BOOK AN APPOINTMENT</small>
+      <small>&copy; 2023 BOOK AN APPOINTMENT</small>
     </div>
   </div>
 );
