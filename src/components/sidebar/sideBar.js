@@ -2,9 +2,11 @@ import React from 'react';
 import {
   FaTwitter, FaFacebookF, FaVine, FaPinterestP,
 } from 'react-icons/fa';
-import { TiSocialGooglePlus } from 'react-icons/ti';​
- const current = new Date()
- const year = current.getFullYear()
+import { TiSocialGooglePlus } from 'react-icons/ti';
+
+const current = new Date();
+const year = current.getFullYear();
+
 const SideBar = () => (
   <div className="flex flex-col w-60 h-screen border border-blue-600 rounded  bg-gray-200 text-center justify-center items-center">
     <img src="https://www.graphicsprings.com/filestorage/stencils/6658e537767711d19f911c852900686c.png?width=500&height=500" width="150" alt="" className="animate-headShake" />
@@ -24,8 +26,14 @@ const SideBar = () => (
         <FaVine />
         <FaPinterestP />
       </div>
-      <small>&copy; {year} BOOK AN APPOINTMENT</small>
+      <small>
+        &copy;
+        {' '}
+        {year}
+        {' '}
+        BOOK AN APPOINTMENT
+      </small>
     </div>
   </div>
 );
-​export default SideBar;
+export default SideBar;
