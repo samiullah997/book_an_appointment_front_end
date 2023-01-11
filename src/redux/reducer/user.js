@@ -24,7 +24,7 @@ export const userReducertrying = (state = initialState, action) => {
         ...action.payload,
       };
     case 'LOGIN':
-      console.log('SIGNUP', action);
+      // console.log('SIGNUP', action);
       return action.payload;
     default:
       return state;
@@ -114,22 +114,21 @@ export const SigninDetailsApi = (details) => async (dispatch) => {
 export const hitAPIWithLogoutDetails = (auth) => async (dispatch) => {
   const { userAuth } = auth;
   try {
-    await fetch(
-      `${baseUrl}/users/sign_out`,
-      {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `${userAuth}`,
-        },
+    await fetch(`${baseUrl}/users/sign_out`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${userAuth}`,
       },
-    );
+    });
 
-    dispatch(LOGOUT({
-      ...initialState,
-      loggedIn: 'out',
-      signedUp: false,
-    }));
+    dispatch(
+      LOGOUT({
+        ...initialState,
+        loggedIn: 'out',
+        signedUp: false,
+      }),
+    );
 
     localStorage.removeItem('userAuth');
     localStorage.removeItem('bookDoctorUser');
