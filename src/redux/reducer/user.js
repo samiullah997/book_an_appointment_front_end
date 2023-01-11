@@ -24,7 +24,7 @@ export const userReducertrying = (state = initialState, action) => {
         ...action.payload,
       };
     case 'LOGIN':
-      console.log('SIGNUP', action);
+      // console.log('SIGNUP', action);
       return action.payload;
     default:
       return state;
@@ -32,9 +32,7 @@ export const userReducertrying = (state = initialState, action) => {
 };
 
 const SignupDetailsApi = (details) => async (dispatch) => {
-  const {
-    name, email, password, address,
-  } = details;
+  const { name, email, password, address } = details;
   try {
     await axios({
       method: 'post',
@@ -56,7 +54,7 @@ const SignupDetailsApi = (details) => async (dispatch) => {
         loggedIn: false,
         userId: '',
         signedUp: 'up',
-      }),
+      })
     );
   } catch (error) {
     dispatch(
@@ -66,7 +64,7 @@ const SignupDetailsApi = (details) => async (dispatch) => {
         loggedIn: false,
         userId: '',
         signedUp: 'down',
-      }),
+      })
     );
   }
 };
@@ -106,7 +104,7 @@ export const SigninDetailsApi = (details) => async (dispatch) => {
         loggedIn: 'err',
         userId: '',
         signedUp: false,
-      }),
+      })
     );
   }
 };
@@ -114,22 +112,21 @@ export const SigninDetailsApi = (details) => async (dispatch) => {
 export const hitAPIWithLogoutDetails = (auth) => async (dispatch) => {
   const { userAuth } = auth;
   try {
-    await fetch(
-      `${baseUrl}/users/sign_out`,
-      {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `${userAuth}`,
-        },
+    await fetch(`${baseUrl}/users/sign_out`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${userAuth}`,
       },
-    );
+    });
 
-    dispatch(LOGOUT({
-      ...initialState,
-      loggedIn: 'out',
-      signedUp: false,
-    }));
+    dispatch(
+      LOGOUT({
+        ...initialState,
+        loggedIn: 'out',
+        signedUp: false,
+      })
+    );
 
     localStorage.removeItem('userAuth');
     localStorage.removeItem('bookDoctorUser');
@@ -141,7 +138,7 @@ export const hitAPIWithLogoutDetails = (auth) => async (dispatch) => {
         loggedIn: 'out',
         userId: '',
         signedUp: false,
-      }),
+      })
     );
   }
 };
