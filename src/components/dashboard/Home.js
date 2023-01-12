@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { singleBike } from '../../redux/actions/bikeAction';
 
@@ -7,44 +7,19 @@ const Home = () => {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(3);
-  // const bikeData = useSelector((state) => state.bikeReducer);
-  // const { bike } = bikeData;
-  // if (!bike) {
-  //   return (
-  //     <h6 className=''>Loading ...</h6>
-  //   );
-  // }
-  const bike = [
-    {
-      id: 1,
-      name: 'Raptor 300 V-TWIN Bike',
-      picture: 'https://rapidrides.pk/wp-content/uploads/2022/03/size-scaled.jpg',
-      price: '1,560,000.00',
-    },
-    {
-      id: 2,
-      name: 'Pulsar P150',
-      picture: 'https://cdn.bajajauto.com/-/media/Assets/bajajauto/bikes/BikeListing/Pulsar/p-n-160.ashx',
-      price: '119757',
-    },
-    {
-      id: 3,
-      name: 'Raptor 300 V-TWIN Bike',
-      picture: 'https://rapidrides.pk/wp-content/uploads/2022/03/size-scaled.jpg',
-      price: '1,560,000.00',
-    },
-    {
-      id: 4,
-      name: 'Pulsar P150',
-      picture: 'https://cdn.bajajauto.com/-/media/Assets/bajajauto/bikes/BikeListing/Pulsar/p-n-160.ashx',
-      price: '119757',
-    },
-  ];
+  const bikeData = useSelector((state) => state.bikeReducer);
+  const { bikes } = bikeData;
+  const reversed = [...bikes].reverse();
+  if (!reversed) {
+    return (
+      <h6 className="text-center">Loading ...</h6>
+    );
+  }
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
-  const currentPosts = bike.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = reversed.slice(indexOfFirstPost, indexOfLastPost);
   const nextPage = () => {
-    if (currentPage >= bike.length / postPerPage) return;
+    if (currentPage >= reversed.length / postPerPage) return;
     setCurrentPage(currentPage + 1);
   };
   const prevPage = () => {
@@ -53,7 +28,7 @@ const Home = () => {
   };
   return (
     <section className="container flex flex-col border h-full sm:h-200 sm:w-full items-center">
-      <h2 className="mt-8">Hello Welcome to your Dashboard</h2>
+      <h2 className="mt-8 text-4xl font-bold text-purple-600">Hello Welcome to your Dashboard</h2>
       <h3 className="mt-2">List of your favourite Bikes</h3>
       <div className="">.........................</div>
       <div className="container flex flex-row justify-center items-center h-full">
@@ -67,11 +42,14 @@ const Home = () => {
                 name, picture, price, id,
               } = item;
               return (
-                <div className="h-full bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700" key={id}>
+                <div className="h-full bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700" key={id}>
                   <img className="rounded-t-lg w-96 h-96 lg:w-50 lg:h-50" src={picture} alt="" />
                   <div className="p-5">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{price}</p>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                      $
+                      {price}
+                    </p>
                     <Link to={`/user/bikes/${id}`} onClick={() => dispatch(singleBike(id))}>
                       <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         View Details
