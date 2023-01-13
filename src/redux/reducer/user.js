@@ -24,7 +24,6 @@ export const userReducertrying = (state = initialState, action) => {
         ...action.payload,
       };
     case 'LOGIN':
-      // console.log('SIGNUP', action);
       return action.payload;
     default:
       return state;
