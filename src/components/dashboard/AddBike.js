@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
+import { useNavigate } from 'react-router-dom';
 import { addBike } from '../../redux/reducer/bikeReducer';
 
 const AddBike = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [model, setModel] = useState('');
   const [price, setPrice] = useState('');
@@ -29,6 +31,7 @@ const AddBike = () => {
     setName('');
     setPrice('');
     setEnginCapacity('');
+    navigate('/user/dashboard');
   };
   return (
     <div className="w-full h-full">
@@ -43,14 +46,14 @@ const AddBike = () => {
         <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
           <form onSubmit={submitBikeData}>
             <div>
-              <div className="block text-sm font-medium text-gray-700 undefined">Name</div>
+              <div className="block text-sm font-medium text-gray-700 undefined">Picture</div>
               <div className="flex flex-col items-start">
                 <input
                   type="text"
                   name="picture"
                   onChange={(e) => setPicture(e.target.value)}
                   value={picture}
-                  className="block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="url"
                   required
                 />
@@ -64,7 +67,7 @@ const AddBike = () => {
                   name="name"
                   onChange={(e) => setName(e.target.value)}
                   value={name}
-                  className="block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="Honda125"
                   required
                 />
@@ -78,7 +81,7 @@ const AddBike = () => {
                   name="model"
                   onChange={(e) => setModel(e.target.value)}
                   value={model}
-                  className="block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="2021"
                   required
                 />
@@ -94,7 +97,7 @@ const AddBike = () => {
                   name="engin_capacity"
                   onChange={(e) => setEnginCapacity(e.target.value)}
                   value={enginCapacity}
-                  className="block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="100cc"
                   required
                 />
@@ -110,7 +113,7 @@ const AddBike = () => {
                   name="price"
                   onChange={(e) => setPrice(e.target.value)}
                   value={price}
-                  className="block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="$200"
                   required
                 />
