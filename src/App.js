@@ -13,4 +13,22 @@ const SidebarLayout = () => (
     <Outlet />
   </>
 );
-export SidebarLayout
+function App() {
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LogIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route element={<SidebarLayout />}>
+            <Route path="/user/dashboard" element={<Home />} />
+            <Route path="/user/AddBike" element={<AddBike />} />
+            <Route path="/user/DeleteBikes" element={<DeleteBikes />} />
+            <Route path="/user/Details" element={<Details />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+export default App;
