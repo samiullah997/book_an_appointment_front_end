@@ -16,7 +16,10 @@ const Home = () => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPosts = reversed.slice(indexOfFirstPost, indexOfLastPost);
-
+  const nextPage = () => {
+    if (currentPage >= reversed.length / postPerPage) return;
+    setCurrentPage(currentPage + 1);
+  };
   const prevPage = () => {
     if (currentPage <= 1) return;
     setCurrentPage(currentPage - 1);
