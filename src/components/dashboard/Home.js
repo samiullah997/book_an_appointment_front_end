@@ -41,7 +41,9 @@ const Home = () => {
         </button>
         <div className="container flex flex-row px-3 space-x-3 justify-center items-center h-auto">
           {currentPosts.map((item) => {
-            const { name, picture, price, id } = item;
+            const {
+              name, picture, price, id,
+            } = item;
             return (
               <div
                 className="h-full bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
@@ -57,7 +59,8 @@ const Home = () => {
                     {name}
                   </h5>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    ${price}
+                    $
+                    {price}
                   </p>
                   <div className="flex flex-row justify-between">
                     <Link
