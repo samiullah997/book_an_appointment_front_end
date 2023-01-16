@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { singleBike } from '../../redux/reducer/bikeReducer';
-
 const Home = () => {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,32 +24,50 @@ const Home = () => {
     setCurrentPage(currentPage - 1);
   };
   return (
-    <section>
-      <h2>Hello Welcome to your Dashboard</h2>
-      <h3> </h3>
-      <div>.........................</div>
-      <div>
-        <button type="button" onClick={prevPage}>
+    <section className="container flex flex-col border h-full sm:h-200 sm:w-full items-center">
+      <h2 className="mt-8 text-4xl font-bold text-purple-600">
+        Hello Welcome to your Dashboard
+      </h2>
+      <h3 className="mt-2">List of your favourite Bikes</h3>
+      <div className="">.........................</div>
+      <div className="container flex flex-row justify-center items-center h-full">
+        <button
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l-full"
+          type="button"
+          onClick={prevPage}
+        >
           Prev
         </button>
-        <div>
+        <div className="container flex flex-row px-3 space-x-3 justify-center items-center h-auto">
           {currentPosts.map((item) => {
             const { name, picture, price, id } = item;
             return (
-              <div key={id}>
-                <img src={picture} alt="" />
-                <div>
-                  <h5>{name}</h5>
-                  <p>${price}</p>
-                  <div>
+              <div
+                className="h-full bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+                key={id}
+              >
+                <img
+                  className="rounded-t-lg w-96 h-96 lg:w-50 lg:h-50"
+                  src={picture}
+                  alt=""
+                />
+                <div className="p-5">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {name}
+                  </h5>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    ${price}
+                  </p>
+                  <div className="flex flex-row justify-between">
                     <Link
                       to={`/user/Details?id=${id}`}
                       onClick={() => dispatch(singleBike(id))}
                     >
-                      <div>
+                      <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         View Details
                         <svg
                           aria-hidden="true"
+                          className="w-4 h-4 ml-2 -mr-1"
                           fillRule="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +87,11 @@ const Home = () => {
             );
           })}
         </div>
-        <button type="button" onClick={nextPage}>
+        <button
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r-full"
+          type="button"
+          onClick={nextPage}
+        >
           Next
         </button>
       </div>
