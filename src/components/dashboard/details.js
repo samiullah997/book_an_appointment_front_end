@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-​
+
 const Details = () => {
   const bikeData = useSelector((state) => state.bikeReducer);
   const { bike } = bikeData;
@@ -17,10 +17,15 @@ const Details = () => {
         </div>
         <h1 className="text-2xl font-bold py-2  px-4">{bike.model}</h1>
         <p className="text-2xl font-bold py-2  px-4">{bike.enginCapacity}</p>
-        <button type="button" className="bg-green-500 mt-40 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Reserve</button>
+        <button
+          type="button"
+          className="bg-green-500 mt-40 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+        >
+          Reserve
+        </button>
       </div>
     </div>
   );
 };
-​
+
 export default Details;
