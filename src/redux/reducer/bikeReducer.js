@@ -30,5 +30,46 @@ const initiaState = {
   ],
   bike: {},
 };
-
+const bikeReducer = (state = initiaState, action) => {
+  switch (action.type) {
+    case 'ALL_BIKES': {
+      return {
+        ...state,
+        bikes: action.payload,
+      };
+    }
+    case 'ADD_BIKE': {
+      return {
+        ...state,
+        bikes: [...state.bikes, action.payload],
+      };
+    }
+    case 'ONE_BIKE': {
+      const oneBike = initiaState.bikes.find(
+        (bike) => bike.id === action.payload
+      );
+      return {
+        ...state,
+        bike: oneBike,
+      };
+    }
+    case 'UPDATE_BIKE': {
+      const index = state.bikes.findIndex((bike) => bike.id !== action.payload);
+      const newArray = [...state.bikes];
+      newArray[index].delete = true;
+      return {
+        ...state,
+        bikes: newArray,
+      };
+    }
+    case 'REMOVE_BIKE': {
+      return {
+        ...state,
+        bikes: state.bikes.filter((bike) => bike.id !== action.payload),
+      };
+    }
+    default:
+      return state;
+  }
+};
 export default bikeReducer;
