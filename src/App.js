@@ -15,7 +15,7 @@ const SidebarLayout = () => (
 );
 function App() {
   return (
-    <div>
+    <div className="flex w-screen justify-start h-screen items-center">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LogIn />} />
