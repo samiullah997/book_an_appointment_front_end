@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { createAction } from '@reduxjs/toolkit';
+
 const ADD_BIKE = createAction('ADD_BIKE');
 const ALL_BIKES = createAction('ALL_BIKES');
 const ONE_BIKE = createAction('ONE_BIKE');
@@ -46,7 +46,7 @@ const bikeReducer = (state = initiaState, action) => {
     }
     case 'ONE_BIKE': {
       const oneBike = initiaState.bikes.find(
-        (bike) => bike.id === action.payload
+        (bike) => bike.id === action.payload,
       );
       return {
         ...state,
