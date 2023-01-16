@@ -13,10 +13,7 @@ const Details = () => {
         <h1 className="text-2xl font-bold py-4">{bike.name}</h1>
         <div className="flex flex-row justify-between w-60 border bg-gray-100 px-2 py-2">
           <span>Price</span>
-          <span>
-            $
-            {bike.price}
-          </span>
+          <span>{bike.price}</span>
         </div>
         <h1 className="text-2xl font-bold py-2  px-4">{bike.model}</h1>
         <p className="text-2xl font-bold py-2  px-4">{bike.enginCapacity}</p>
