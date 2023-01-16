@@ -72,4 +72,21 @@ const bikeReducer = (state = initiaState, action) => {
       return state;
   }
 };
+export const fetchBikes = (allBikes) => async (dispatch) => {
+  // const bikes = await fetchAllBikes();
+  initiaState.bikes.push(allBikes);
+  dispatch(ALL_BIKES(initiaState.bikes));
+};
+export const addBike = (bikeData) => async (dispatch) => {
+  dispatch(ADD_BIKE(bikeData));
+};
+export const removeBike = (id) => async (dispatch) => {
+  dispatch(REMOVE_BIKE(id));
+};
+export const updateBike = (id) => async (dispatch) => {
+  dispatch(UPDATE_BIKE(id));
+};
+export const singleBike = (id) => async (dispatch) => {
+  dispatch(ONE_BIKE(id));
+};
 export default bikeReducer;
