@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { singleBike } from '../../redux/reducer/bikeReducer';
@@ -10,8 +10,16 @@ const Home = () => {
   const bikeData = useSelector((state) => state.bikeReducer);
   const { bikes } = bikeData;
   const reversed = [...bikes].reverse();
-  if (!reversed) {
-    return <h6 className="text-center">Loading ...</h6>;
+  if (reversed.length === 0) {
+    return (
+      <div className="flex w-full h-full justify-center items-center">
+        <img
+          src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif"
+          className="w-10 h-10"
+          alt="loading"
+        />
+      </div>
+    );
   }
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -25,13 +33,13 @@ const Home = () => {
     setCurrentPage(currentPage - 1);
   };
   return (
-    <section className="container flex flex-col border h-full sm:h-200 sm:w-full items-center">
+    <section className="container overflow-scroll flex flex-col border h-full sm:h-200 sm:w-full items-center">
       <h2 className="mt-8 text-4xl font-bold text-purple-600">
         Hello Welcome to your Dashboard
       </h2>
       <h3 className="mt-2">List of your favourite Bikes</h3>
       <div className="">.........................</div>
-      <div className="container flex flex-row justify-center items-center h-full">
+      <div className="container w-full flex flex-row justify-center items-center h-full">
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l-full"
           type="button"
@@ -39,14 +47,14 @@ const Home = () => {
         >
           Prev
         </button>
-        <div className="container flex flex-row px-3 space-x-3 justify-center items-center h-auto">
+        <div className="container w-4/5 flex flex-row px-3 space-x-3 justify-center items-center h-auto">
           {currentPosts.map((item) => {
             const {
               name, picture, price, id,
             } = item;
             return (
               <div
-                className="h-full bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+                className="h-full w-3/5 bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
                 key={id}
               >
                 <img

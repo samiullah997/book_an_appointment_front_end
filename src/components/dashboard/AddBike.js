@@ -10,6 +10,7 @@ const AddBike = () => {
   const [model, setModel] = useState('');
   const [price, setPrice] = useState('');
   const [enginCapacity, setEnginCapacity] = useState('');
+  const [description, setDescription] = useState('');
   const [picture, setPicture] = useState('');
   const dispatch = useDispatch();
   const submitBikeData = (e) => {
@@ -21,16 +22,17 @@ const AddBike = () => {
       name,
       model,
       price,
+      description,
       enginCapacity,
-      delete: false,
+      reserve: false,
     };
-
     dispatch(addBike(formData));
     setPicture('');
     setModel('');
     setName('');
     setPrice('');
     setEnginCapacity('');
+    setDescription('');
     navigate('/user/dashboard');
   };
   return (
@@ -46,7 +48,9 @@ const AddBike = () => {
         <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
           <form onSubmit={submitBikeData}>
             <div>
-              <div className="block text-sm font-medium text-gray-700 undefined">Picture</div>
+              <div className="block text-sm font-medium text-gray-700 undefined">
+                Picture
+              </div>
               <div className="flex flex-col items-start">
                 <input
                   type="text"
@@ -60,7 +64,9 @@ const AddBike = () => {
               </div>
             </div>
             <div>
-              <div className="block text-sm font-medium text-gray-700 undefined">Name</div>
+              <div className="block text-sm font-medium text-gray-700 undefined">
+                Name
+              </div>
               <div className="flex flex-col items-start">
                 <input
                   type="text"
@@ -74,7 +80,9 @@ const AddBike = () => {
               </div>
             </div>
             <div className="mt-4">
-              <div className="block text-sm font-medium text-gray-700 undefined">Model</div>
+              <div className="block text-sm font-medium text-gray-700 undefined">
+                Model
+              </div>
               <div className="flex flex-col items-start">
                 <input
                   type="text"
@@ -119,6 +127,22 @@ const AddBike = () => {
                 />
               </div>
             </div>
+            <div className="mt-4">
+              <div className="block text-sm font-medium text-gray-700 undefined">
+                Description
+              </div>
+              <div className="flex flex-col items-start">
+                <textarea
+                  type="text"
+                  name="description"
+                  onChange={(e) => setDescription(e.target.value)}
+                  value={description}
+                  className="px-2 block w-full h-28 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  placeholder="description here...."
+                  required
+                />
+              </div>
+            </div>
             <div className="flex items-center justify-center mt-4">
               <button
                 type="submit"
@@ -133,5 +157,4 @@ const AddBike = () => {
     </div>
   );
 };
-
 export default AddBike;
