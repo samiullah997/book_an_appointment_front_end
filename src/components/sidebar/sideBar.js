@@ -17,6 +17,7 @@ const SideBar = () => (
         <li className="border border-gray-400 hover:bg-gray-400 rounded-xl hover:border-gray-200 hover:text-black cursor-pointer font-sans"><Link to="/user/AddBike"><p className="py-2 w-full">Add Bike</p></Link></li>
         <li className="border border-gray-400 hover:bg-gray-400 rounded-xl hover:border-gray-200 hover:text-black cursor-pointer font-sans"><Link to="/user/DeleteBikes"><p className="py-2 w-full">Delete Bikes</p></Link></li>
         <li className="border border-gray-400 hover:bg-gray-400 rounded-xl hover:border-gray-200 hover:text-black cursor-pointer font-sans"><Link to="/user/ReserveBike"><p className="py-2 w-full">Reserve Bikes</p></Link></li>
+        <li className="border border-gray-400 hover:bg-gray-400 rounded-xl hover:border-gray-200 hover:text-black cursor-pointer font-sans"><Link to="/user/MyReservations"><p className="py-2 w-full">My Reservations</p></Link></li>
       </ul>
     </div>
     <div className="footer">
