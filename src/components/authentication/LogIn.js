@@ -18,6 +18,7 @@ const LogIn = () => {
       password,
     };
     dispatch(SigninDetailsApi(newUser));
+    // navigate('/user/dashboard');
     setEmail('');
     setPassowrd('');
   };
@@ -27,7 +28,7 @@ const LogIn = () => {
       navigate('/user/dashboard', { replace: true });
     }
     if (loggedIn === 'err') {
-      navigate('/user/login', { replace: true });
+      navigate('/', { replace: true });
     }
   }, [state]);
 
