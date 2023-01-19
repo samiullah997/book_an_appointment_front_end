@@ -15,7 +15,7 @@ const SignUp = () => {
   const [name, setName] = useState('');
   const [password, setPassowrd] = useState('');
   const [confirmPassword, setConfirmPassowrd] = useState('');
-  const [address, setAddress] = useState('');
+  const [userName, setUserName] = useState('');
 
   const registerUser = (e) => {
     e.preventDefault();
@@ -24,14 +24,15 @@ const SignUp = () => {
     const newUser = {
       email,
       name,
-      address,
+      username: userName,
       password,
+      password_confirmation: confirmPassword,
     };
     dispatch(SignupDetailsApi(newUser));
     setEmail('');
     setName('');
     setPassowrd('');
-    setAddress('');
+    setUserName('');
     setConfirmPassowrd('');
   };
 
@@ -56,11 +57,11 @@ const SignUp = () => {
             </div>
 
             <div className="mb-4 text-lg">
-              <input className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md" required onChange={(e) => setEmail(e.target.value)} value={email} type="email" name="email" placeholder="john@gmail.com" />
+              <input className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md" required onChange={(e) => setUserName(e.target.value)} value={userName} type="text" name="address" placeholder="username" />
             </div>
 
             <div className="mb-4 text-lg">
-              <input className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md" required onChange={(e) => setAddress(e.target.value)} value={address} type="text" name="address" placeholder="street122" />
+              <input className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md" required onChange={(e) => setEmail(e.target.value)} value={email} type="email" name="email" placeholder="john@gmail.com" />
             </div>
 
             <div className="mb-4 text-lg">
