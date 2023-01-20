@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-
 import { addReservation } from '../../redux/reducer/reservationReducer';
 
 const Reservation = () => {
@@ -38,7 +37,6 @@ const Reservation = () => {
     }
     return false;
   };
-
 
   return (
     <div className="w-full h-full bg-image border border-black">

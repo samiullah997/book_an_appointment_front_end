@@ -49,7 +49,6 @@ const AddBike = () => {
     setBikeType('');
     setDescription('');
     setMessage('Bike added successfully');
-
   };
   return (
     <div className="w-full h-full">
