@@ -42,20 +42,40 @@ const LogIn = () => {
           </div>
           <form onSubmit={loginUser}>
             <div className="mb-4 text-lg">
-              <input className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" required onChange={(e) => setEmail(e.target.value)} value={email} type="email" name="name" placeholder="id@email.com" />
+              <input
+                className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                type="email"
+                name="name"
+                placeholder="id@email.com"
+              />
             </div>
 
             <div className="mb-4 text-lg">
-              <input className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" required onChange={(e) => setPassowrd(e.target.value)} value={password} type="Password" name="name" placeholder="*********" />
+              <input
+                className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                required
+                onChange={(e) => setPassowrd(e.target.value)}
+                value={password}
+                type="Password"
+                name="name"
+                placeholder="*********"
+              />
             </div>
             <div className="mt-8 flex justify-center text-lg text-black">
-              <button type="submit" className="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Login</button>
+              <button
+                type="submit"
+                className="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+              >
+                Login
+              </button>
             </div>
           </form>
           <p className="mt-8 text-xs font-light text-center text-gray-700">
             {' '}
             Do not have an account?
-            {' '}
             <a
               href="/signup"
               className="font-medium text-purple-600 hover:underline"
