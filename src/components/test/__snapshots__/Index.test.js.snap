@@ -31,6 +31,9 @@ exports[`should match snapshot of the Index component 1`] = `
           >
             Enter Login Details
           </span>
+          <span
+            className="text-xl text-green-700"
+          />
         </div>
         <form
           onSubmit={[Function]}

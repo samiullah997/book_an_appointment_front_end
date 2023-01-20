@@ -31,7 +31,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 GymFit <a name="A web app  that helps make reservations for a bike , eg: suzuki, honda yamaha"></a>
+# 📖 Bike Reservation <a name="A web app  that helps make reservations for a bike , eg: suzuki, honda yamaha"></a>
 
 - **Bike reservation** is a web application that allows users to view and reserve a bike, i.e. Yamaha, Suzuki Honda e.t.c. A user can reserve one bike per session on separate dates.
 - The application features user based authorization, a basic user can read and manage their user specific reservations while the admin can manage all operations in the application. I.e. create and delete bikes e.t.c
