@@ -1,10 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { singleBike } from '../../redux/reducer/bikeReducer';
 
 const Details = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const userData = localStorage.getItem('bookBikeUser');
+  const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
   const bikeData = useSelector((state) => state.bikeReducer);
   const { bike } = bikeData;
   return (

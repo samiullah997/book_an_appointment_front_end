@@ -12,6 +12,9 @@ const Reservation = () => {
   const { reservations } = reservationData;
   const userData = localStorage.getItem('bookBikeUser');
   const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
   const submitData = (e) => {
     e.preventDefault();
     const date = document.getElementById('date').value;

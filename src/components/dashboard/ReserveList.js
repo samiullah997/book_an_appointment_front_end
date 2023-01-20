@@ -1,13 +1,20 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { removeReservation } from '../../redux/reducer/reservationReducer';
 
 const ReserveList = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const reservationData = useSelector((state) => state.reservationReducer);
   const bikeData = useSelector((state) => state.bikeReducer);
   const { bikes } = bikeData;
   const { reservations } = reservationData;
+  const userData = localStorage.getItem('bookBikeUser');
+  const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
 
   const reversed = [...reservations].reverse();
   if (!reversed) {

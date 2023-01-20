@@ -1,9 +1,11 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addReservation } from '../../redux/reducer/reservationReducer';
 
 const ReserveBike = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const bikeData = useSelector((state) => state.bikeReducer);
   const reservationData = useSelector((state) => state.reservationReducer);
@@ -26,6 +28,9 @@ const ReserveBike = () => {
 
   const userData = localStorage.getItem('bookBikeUser');
   const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
 
   const submitData = (e) => {
     e.preventDefault();
@@ -39,7 +44,6 @@ const ReserveBike = () => {
     dispatch(addReservation(data));
     document.getElementById('date').value = '';
   };
-
   return (
     <div className="w-full h-full bg-image border border-black">
       <form className="w-full h-full" onSubmit={submitData}>
@@ -53,7 +57,7 @@ const ReserveBike = () => {
 
           <div className="flex flex-col w-full h-full justify-center items-center gap-2">
             <select onChange={setId} className="bg-green-500 placeholder-gray-100 w-3/4 sm:w-1/4  hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
-              <option disabled selected>Select Bike</option>
+              <option defaultValue="none">Select Bike</option>
               {bikes.map((bike) => (
                 <option key={bike.id} value={bike.id}>{bike.name}</option>
               ))}

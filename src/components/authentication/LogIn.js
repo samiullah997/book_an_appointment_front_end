@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { SigninDetailsApi } from '../../redux/reducer/user';
 
 const LogIn = () => {
+  const [showMessage, setShowMessage] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -28,6 +29,7 @@ const LogIn = () => {
       navigate('/user/dashboard', { replace: true });
     }
     if (loggedIn === 'err') {
+      setShowMessage('Your Cradential is not correct.');
       navigate('/', { replace: true });
     }
   }, [state]);
@@ -40,6 +42,7 @@ const LogIn = () => {
             <img src="./favicon.png" width="150" alt="" />
             <h1 className="mb-2 text-2xl">Buy Bikes</h1>
             <span className="text-white">Enter Login Details</span>
+            <span className="text-xl text-green-700">{showMessage}</span>
           </div>
           <form onSubmit={loginUser}>
             <div className="mb-4 text-lg">

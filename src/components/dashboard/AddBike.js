@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import uuid from 'react-uuid';
 // import { useNavigate } from 'react-router-dom';
 import { addBike } from '../../redux/reducer/bikeReducer';
 
 const AddBike = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [brand, setBrand] = useState('');
   const [price, setPrice] = useState('');
@@ -14,6 +15,11 @@ const AddBike = () => {
   const [description, setDescription] = useState('');
   const [picture, setPicture] = useState('');
   const dispatch = useDispatch();
+  const userData = localStorage.getItem('bookBikeUser');
+  const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
 
   const submitBikeData = (e) => {
     e.preventDefault();

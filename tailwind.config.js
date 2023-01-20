@@ -17,11 +17,11 @@ module.exports = {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-15deg)' },
           '50%': { transform: 'rotate(15deg)' },
-        }
+        },
       },
       animation: {
-        'headShake': 'headShake 2s infinite',
-        'wiggle': 'wiggle easy-in-out infinite',
+        headShake: 'headShake 2s infinite',
+        wiggle: 'wiggle easy-in-out infinite',
       },
     },
   },
