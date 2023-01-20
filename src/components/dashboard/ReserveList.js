@@ -28,17 +28,17 @@ const ReserveList = () => {
       <div>List of All Bikes</div>
       <div className="container flex flex-wrap px-3 justify-center items-center w-full gap-2 h-full border">
         {
-                    reversed.map(((item, index) => {
-                      const data = bikes.filter((bike) => bike.id !== item.id);
-                      const bike = data.reverse();
+                    reversed.map(((item) => {
+                      const data = bikes.filter((bike) => bike.id === item.bike_id);
+                      const bike = data;
                       return (
-                        <div className="h-auto bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700" key={item.id}>
-                          <img className="rounded-t-lg w-96 h-96 lg:w-50 lg:h-50" src={bike[index].bike_image} alt="" />
+                        <div className="h-auto bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700" key={item.bike_id}>
+                          <img className="rounded-t-lg w-96 h-96 lg:w-50 lg:h-50" src={bike[0].bike_image} alt="" />
                           <div className="p-5">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{bike[index].name}</h5>
+                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{bike[0].name}</h5>
                             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                               $
-                              {bike[index].daily_rate}
+                              {bike[0].daily_rate}
                             </p>
                             <div className="flex flex-row justify-between">
                               <button type="button" onClick={() => dispatch(removeReservation(item.id))} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">

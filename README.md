@@ -135,17 +135,17 @@ You can deploy this project using:
 - Twitter: [@alfkinyua](https://twitter.com/alfkinyua)
 - LinkedIn: [AlfredKInyua](https://www.linkedin.com/in/alfred-kinyua/)
 
-👤 **Sami**
+👤 **Samiullah**
 
-- GitHub: []()
-- Twitter: []()
-- LinkedIn: []()
+- GitHub: [@samiullah997](https://github.com/samiullah997)
+- Twitter: [@samiullahk997](https://twitter.com/samiullahk997)
+- LinkedIn: [Samiullah Khan](https://www.linkedin.com/in/samiullah-khan-2702b7171/)
 
-### 👤 **Jollah**
+👤 **Alusine Jalloh**
 
-- GitHub: []()
-- Twitter: []()
-- LinkedIn: []()
+- GitHub: [@Alusp](https://github.com/Alusp)
+- LinkedIn: [@alusine jalloh](https://www.linkedin.com/in/alusine-jalloh)
+- Twitter: [@aseni_jalloh](https://twitter.com/aseni_jalloh)
 
 ## 🔭 Future Features <a name="future-features"></a>
 

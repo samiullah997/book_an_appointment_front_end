@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import {
-  createBike, deleteBike, fetchAllBikes, fetchSingleBikes,
+  createBike, deleteBike, fetchAllBikes,
 } from '../../api/BikeAppi';
 
 const ADD_BIKE = createAction('ADD_BIKE');
@@ -56,8 +56,8 @@ export const fetchBikes = () => async (dispatch) => {
   dispatch(ALL_BIKES(initiaState.bikes));
 };
 export const addBike = (bikeData) => async (dispatch) => {
-  dispatch(ADD_BIKE(bikeData));
-  await createBike(bikeData);
+  const fetchBikeData = await createBike(bikeData);
+  dispatch(ADD_BIKE(fetchBikeData));
 };
 export const removeBike = (id) => async (dispatch) => {
   dispatch(REMOVE_BIKE(id));
@@ -67,7 +67,6 @@ export const updateBike = (id) => async (dispatch) => {
   dispatch(UPDATE_BIKE(id));
 };
 export const singleBike = (id) => async (dispatch) => {
-  const singleBike = await fetchSingleBikes(id);
-  dispatch(ONE_BIKE(singleBike));
+  dispatch(ONE_BIKE(id));
 };
 export default bikeReducer;
