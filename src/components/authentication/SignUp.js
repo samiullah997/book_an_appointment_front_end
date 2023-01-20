@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import SignupDetailsApi from '../../redux/reducer/user';
 
 const SignUp = () => {
-  const navigate = useNavigate();
-  function goToHomePage() {
-    navigate('/user/dashboard', { replace: true });
+  const [showMessage, setShowMessage] = useState('');
+  function showAlert() {
+    setShowMessage('Signed Up Successfully');
   }
   const dispatch = useDispatch();
   const state = useSelector((state) => state.UserReducer);
@@ -38,7 +37,7 @@ const SignUp = () => {
 
   useEffect(() => {
     if (signedUp === 'up') {
-      setTimeout(() => goToHomePage(), 3000);
+      setTimeout(() => showAlert(), 3000);
     }
   }, [state]);
 
@@ -50,6 +49,7 @@ const SignUp = () => {
             <img src="./favicon.png" width="150" alt="" />
             <h1 className="mb-2 text-2xl">Buy Bikes</h1>
             <span className="text-white">Enter Login Details</span>
+            <span className="text-xl text-green-700">{showMessage}</span>
           </div>
           <form onSubmit={registerUser}>
             <div className="mb-4 text-lg">
