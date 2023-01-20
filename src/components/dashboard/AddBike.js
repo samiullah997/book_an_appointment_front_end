@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import uuid from 'react-uuid';
-// import { useNavigate } from 'react-router-dom';
 import { addBike } from '../../redux/reducer/bikeReducer';
 
 const AddBike = () => {
@@ -29,10 +27,8 @@ const AddBike = () => {
     const user = JSON.parse(userData);
     if (!name || !brand || !price || !bikeType || !picture) return;
     const formData = {
-      id: uuid(),
       bike_image: picture,
       name,
-
       brand,
       daily_rate: price,
       description,
@@ -45,7 +41,6 @@ const AddBike = () => {
     setBrand('');
     setName('');
     setPrice('');
-
     setBikeType('');
     setDescription('');
     setMessage('Bike added successfully');

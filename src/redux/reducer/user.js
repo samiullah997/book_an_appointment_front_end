@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAction } from '@reduxjs/toolkit';
 
-const baseUrl = 'http://localhost:3000/auth/';
+const baseUrl = 'https://book-appoint.onrender.com/auth/';
 
 const initialState = {
   name: '',
@@ -37,7 +37,7 @@ const SignupDetailsApi = (details) => async (dispatch) => {
   try {
     await axios({
       method: 'post',
-      url: 'http://localhost:3000/auth/',
+      url: 'https://book-appoint.onrender.com/auth/',
       data: {
         email,
         password,
@@ -71,7 +71,7 @@ const SignupDetailsApi = (details) => async (dispatch) => {
 export const SigninDetailsApi = (details) => async (dispatch) => {
   const { email, password } = details;
   try {
-    const userData = await fetch(`${baseUrl}sign_in`, {
+    const userData = await fetch(`${baseUrl}sign_in/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
