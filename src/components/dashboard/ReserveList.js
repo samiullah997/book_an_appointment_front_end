@@ -22,6 +22,7 @@ const ReserveList = () => {
       <h6 className="text-center">Loading ...</h6>
     );
   }
+
   return (
     <div className="contianer flex flex-col items-center w-full h-full overflow-scroll">
       <div>List of All Bikes</div>
@@ -51,9 +52,9 @@ const ReserveList = () => {
                       );
                     }))
                 }
+
       </div>
     </div>
   );
 };
-
 export default ReserveList;

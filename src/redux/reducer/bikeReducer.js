@@ -12,7 +12,6 @@ const initiaState = {
   bikes: [],
   bike: {},
 };
-
 const bikeReducer = (state = initiaState, action) => {
   switch (action.type) {
     case 'ALL_BIKES': {
@@ -28,9 +27,10 @@ const bikeReducer = (state = initiaState, action) => {
       };
     }
     case 'ONE_BIKE': {
+      const oneBike = state.bikes.find((bike) => bike.id === action.payload);
       return {
         ...state,
-        bike: action.payload,
+        bike: oneBike,
       };
     }
     case 'UPDATE_BIKE': {
@@ -55,24 +55,19 @@ export const fetchBikes = () => async (dispatch) => {
   initiaState.bikes = allBike;
   dispatch(ALL_BIKES(initiaState.bikes));
 };
-
 export const addBike = (bikeData) => async (dispatch) => {
   dispatch(ADD_BIKE(bikeData));
   await createBike(bikeData);
 };
-
 export const removeBike = (id) => async (dispatch) => {
   dispatch(REMOVE_BIKE(id));
   await deleteBike(id);
 };
-
 export const updateBike = (id) => async (dispatch) => {
   dispatch(UPDATE_BIKE(id));
 };
-
 export const singleBike = (id) => async (dispatch) => {
   const singleBike = await fetchSingleBikes(id);
   dispatch(ONE_BIKE(singleBike));
 };
-
 export default bikeReducer;

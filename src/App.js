@@ -18,7 +18,6 @@ const SidebarLayout = () => (
     <Outlet />
   </>
 );
-
 function App() {
   return (
     <div className="flex w-screen justify-start h-screen items-center">
@@ -40,5 +39,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

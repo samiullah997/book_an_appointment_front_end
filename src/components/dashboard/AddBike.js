@@ -10,8 +10,10 @@ const AddBike = () => {
   const [name, setName] = useState('');
   const [brand, setBrand] = useState('');
   const [price, setPrice] = useState('');
+
   const [message, setMessage] = useState('');
   const [bikeType, setBikeType] = useState('');
+
   const [description, setDescription] = useState('');
   const [picture, setPicture] = useState('');
   const dispatch = useDispatch();
@@ -30,21 +32,24 @@ const AddBike = () => {
       id: uuid(),
       bike_image: picture,
       name,
+
       brand,
       daily_rate: price,
       description,
       bike_type: bikeType,
       user_id: user.userId,
-    };
 
+    };
     dispatch(addBike(formData));
     setPicture('');
     setBrand('');
     setName('');
     setPrice('');
+
     setBikeType('');
     setDescription('');
     setMessage('Bike added successfully');
+
   };
   return (
     <div className="w-full h-full">
@@ -60,7 +65,9 @@ const AddBike = () => {
         <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
           <form onSubmit={submitBikeData}>
             <div>
-              <div className="block text-sm font-medium text-gray-700 undefined">Picture</div>
+              <div className="block text-sm font-medium text-gray-700 undefined">
+                Picture
+              </div>
               <div className="flex flex-col items-start">
                 <input
                   type="text"
@@ -74,7 +81,9 @@ const AddBike = () => {
               </div>
             </div>
             <div>
-              <div className="block text-sm font-medium text-gray-700 undefined">Name</div>
+              <div className="block text-sm font-medium text-gray-700 undefined">
+                Name
+              </div>
               <div className="flex flex-col items-start">
                 <input
                   type="text"
@@ -88,7 +97,9 @@ const AddBike = () => {
               </div>
             </div>
             <div className="mt-4">
+
               <div className="block text-sm font-medium text-gray-700 undefined">Brand</div>
+
               <div className="flex flex-col items-start">
                 <input
                   type="text"
@@ -134,7 +145,9 @@ const AddBike = () => {
               </div>
             </div>
             <div className="mt-4">
+
               <div className="block text-sm font-medium text-gray-700 undefined">Description</div>
+
               <div className="flex flex-col items-start">
                 <textarea
                   type="text"
@@ -161,5 +174,4 @@ const AddBike = () => {
     </div>
   );
 };
-
 export default AddBike;

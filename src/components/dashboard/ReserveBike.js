@@ -1,3 +1,4 @@
+
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +11,7 @@ const ReserveBike = () => {
   const bikeData = useSelector((state) => state.bikeReducer);
   const reservationData = useSelector((state) => state.reservationReducer);
   const { reservations } = reservationData;
+
   const [bikeDetail, setBikeDetails] = useState('');
   const { bikes } = bikeData;
   const setId = (e) => {
@@ -64,12 +66,10 @@ const ReserveBike = () => {
             </select>
             <input type="date" required name="date" id="date" className="bg-green-500 w-3/4 sm:w-1/4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" />
             {checkReservation(bikeDetail.id) ? (<img src="https://media.istockphoto.com/id/828928236/vector/red-rubber-stamp-icon-on-transparent-background.jpg?b=1&s=612x612&w=0&k=20&c=gP3E8Zi5YAaKcqdH7ZOsrDdNzHURvQ2gJNdZORjH9PA=" className="h-10 w-30" alt="reserved" />) : <button type="submit" className="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Reserve</button>}
-
           </div>
         </div>
       </form>
     </div>
   );
 };
-
 export default ReserveBike;
