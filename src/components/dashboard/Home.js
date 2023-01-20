@@ -42,7 +42,7 @@ const Home = () => {
           {
             currentPosts.map((item) => (
               <div className="h-full w-2/5 bg-gray-50 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700" key={item.id}>
-                <img className="rounded-t-lg w-96 h-96 lg:w-50 lg:h-50" src={item.bike_image} alt="" />
+                <img className="rounded-t-lg w-96 h-96 lg:w-50 lg:h-50 animate-wiggle" src={item.bike_image} alt="" />
                 <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{item.name}</h5>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">

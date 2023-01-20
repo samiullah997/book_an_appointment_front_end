@@ -70,7 +70,6 @@ const SignupDetailsApi = (details) => async (dispatch) => {
 
 export const SigninDetailsApi = (details) => async (dispatch) => {
   const { email, password } = details;
-  console.log(email, password);
   try {
     const userData = await fetch(`${baseUrl}sign_in`, {
       method: 'POST',
@@ -84,7 +83,6 @@ export const SigninDetailsApi = (details) => async (dispatch) => {
     }).then((res) => res.json());
 
     const { data } = userData;
-    console.log(data);
     const mainUser = {
       name: data.name,
       email: data.email,

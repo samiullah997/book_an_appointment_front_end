@@ -19,7 +19,6 @@ const AddBike = () => {
     e.preventDefault();
     const userData = localStorage.getItem('bookBikeUser');
     const user = JSON.parse(userData);
-    console.log(user.userId);
     if (!name || !brand || !price || !bikeType || !picture) return;
     const formData = {
       id: uuid(),
