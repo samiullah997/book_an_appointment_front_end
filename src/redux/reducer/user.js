@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAction } from '@reduxjs/toolkit';
 
-const baseUrl = 'http://localhost:3001/';
+const baseUrl = 'http://localhost:3000/auth/';
 
 const initialState = {
   name: '',
@@ -37,14 +37,12 @@ const SignupDetailsApi = (details) => async (dispatch) => {
   try {
     await axios({
       method: 'post',
-      url: 'http://localhost:3001/users',
+      url: 'http://localhost:3000/auth/',
       data: {
-        user: {
-          email,
-          password,
-          name,
-          address,
-        },
+        email,
+        password,
+        name,
+        address,
       },
     });
 
@@ -73,28 +71,25 @@ const SignupDetailsApi = (details) => async (dispatch) => {
 export const SigninDetailsApi = (details) => async (dispatch) => {
   const { email, password } = details;
   try {
-    const signUpRespons = await axios({
-      method: 'post',
-      url: `${baseUrl}/users/sign_in`,
-      data: {
-        user: {
-          email,
-          password,
-        },
+    const userData = await fetch(`${baseUrl}sign_in`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    });
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    }).then((res) => res.json());
 
-    const { data, headers } = signUpRespons;
-    const { user } = data;
-    const { Authorization } = headers;
+    const { data } = userData;
     const mainUser = {
-      name: user.name,
-      email: user.email,
+      name: data.name,
+      email: data.email,
       loggedIn: 'in',
-      userId: user.id,
+      userId: data.id,
       signedUp: true,
     };
-    localStorage.setItem('userAuth', JSON.stringify(Authorization));
     localStorage.setItem('bookBikeUser', JSON.stringify(mainUser));
     dispatch(LOGIN(mainUser));
   } catch (error) {

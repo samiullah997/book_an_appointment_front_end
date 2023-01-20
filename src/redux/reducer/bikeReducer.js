@@ -1,4 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
+import {
+  createBike, deleteBike, fetchAllBikes, fetchSingleBikes,
+} from '../../api/BikeAppi';
 
 const ADD_BIKE = createAction('ADD_BIKE');
 const ALL_BIKES = createAction('ALL_BIKES');
@@ -31,12 +34,9 @@ const bikeReducer = (state = initiaState, action) => {
       };
     }
     case 'UPDATE_BIKE': {
-      const index = state.bikes.findIndex((bike) => bike.id === action.payload);
-      const newArray = [...state.bikes];
-      newArray[index].reserve = true;
       return {
         ...state,
-        bikes: newArray,
+        bikes: action.payload,
       };
     }
     case 'REMOVE_BIKE': {
@@ -49,20 +49,25 @@ const bikeReducer = (state = initiaState, action) => {
       return state;
   }
 };
-export const fetchBikes = (allBikes) => async (dispatch) => {
-  initiaState.bikes.push(allBikes);
+
+export const fetchBikes = () => async (dispatch) => {
+  const allBike = await fetchAllBikes();
+  initiaState.bikes = allBike;
   dispatch(ALL_BIKES(initiaState.bikes));
 };
 export const addBike = (bikeData) => async (dispatch) => {
   dispatch(ADD_BIKE(bikeData));
+  await createBike(bikeData);
 };
 export const removeBike = (id) => async (dispatch) => {
   dispatch(REMOVE_BIKE(id));
+  await deleteBike(id);
 };
 export const updateBike = (id) => async (dispatch) => {
   dispatch(UPDATE_BIKE(id));
 };
 export const singleBike = (id) => async (dispatch) => {
-  dispatch(ONE_BIKE(id));
+  const singleBike = await fetchSingleBikes(id);
+  dispatch(ONE_BIKE(singleBike));
 };
 export default bikeReducer;

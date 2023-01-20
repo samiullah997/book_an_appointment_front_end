@@ -1,39 +1,54 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import uuid from 'react-uuid';
 import { useNavigate } from 'react-router-dom';
+import uuid from 'react-uuid';
+// import { useNavigate } from 'react-router-dom';
 import { addBike } from '../../redux/reducer/bikeReducer';
 
 const AddBike = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
-  const [model, setModel] = useState('');
+  const [brand, setBrand] = useState('');
   const [price, setPrice] = useState('');
-  const [enginCapacity, setEnginCapacity] = useState('');
+
+  const [message, setMessage] = useState('');
+  const [bikeType, setBikeType] = useState('');
+
   const [description, setDescription] = useState('');
   const [picture, setPicture] = useState('');
   const dispatch = useDispatch();
+  const userData = localStorage.getItem('bookBikeUser');
+  const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
+
   const submitBikeData = (e) => {
     e.preventDefault();
-    if (!name || !model || !price || !enginCapacity || !picture) return;
+    const userData = localStorage.getItem('bookBikeUser');
+    const user = JSON.parse(userData);
+    if (!name || !brand || !price || !bikeType || !picture) return;
     const formData = {
       id: uuid(),
-      picture,
+      bike_image: picture,
       name,
-      model,
-      price,
+
+      brand,
+      daily_rate: price,
       description,
-      enginCapacity,
-      reserve: false,
+      bike_type: bikeType,
+      user_id: user.userId,
+
     };
     dispatch(addBike(formData));
     setPicture('');
-    setModel('');
+    setBrand('');
     setName('');
     setPrice('');
-    setEnginCapacity('');
+
+    setBikeType('');
     setDescription('');
-    navigate('/user/dashboard');
+    setMessage('Bike added successfully');
   };
   return (
     <div className="w-full h-full">
@@ -44,6 +59,7 @@ const AddBike = () => {
               Add Bike Details
             </h3>
           </a>
+          <div className="flex flex-row justify-center items-center text-2xl font-bold text-green-700 mt-4">{message}</div>
         </div>
         <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg">
           <form onSubmit={submitBikeData}>
@@ -80,33 +96,33 @@ const AddBike = () => {
               </div>
             </div>
             <div className="mt-4">
-              <div className="block text-sm font-medium text-gray-700 undefined">
-                Model
-              </div>
+
+              <div className="block text-sm font-medium text-gray-700 undefined">Brand</div>
+
               <div className="flex flex-col items-start">
                 <input
                   type="text"
                   name="model"
-                  onChange={(e) => setModel(e.target.value)}
-                  value={model}
+                  onChange={(e) => setBrand(e.target.value)}
+                  value={brand}
                   className="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  placeholder="2021"
+                  placeholder="Bike Brand"
                   required
                 />
               </div>
             </div>
             <div className="mt-4">
               <div className="block text-sm font-medium text-gray-700 undefined">
-                Engin Capacity
+                Bike Type
               </div>
               <div className="flex flex-col items-start">
                 <input
                   type="text"
                   name="engin_capacity"
-                  onChange={(e) => setEnginCapacity(e.target.value)}
-                  value={enginCapacity}
+                  onChange={(e) => setBikeType(e.target.value)}
+                  value={bikeType}
                   className="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  placeholder="100cc"
+                  placeholder="Bike Type"
                   required
                 />
               </div>
@@ -128,9 +144,9 @@ const AddBike = () => {
               </div>
             </div>
             <div className="mt-4">
-              <div className="block text-sm font-medium text-gray-700 undefined">
-                Description
-              </div>
+
+              <div className="block text-sm font-medium text-gray-700 undefined">Description</div>
+
               <div className="flex flex-col items-start">
                 <textarea
                   type="text"

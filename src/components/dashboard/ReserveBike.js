@@ -1,33 +1,48 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import uuid from 'react-uuid';
-import { updateBike } from '../../redux/reducer/bikeReducer';
+import { useNavigate } from 'react-router-dom';
 import { addReservation } from '../../redux/reducer/reservationReducer';
 
 const ReserveBike = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const bikeData = useSelector((state) => state.bikeReducer);
+  const reservationData = useSelector((state) => state.reservationReducer);
+  const { reservations } = reservationData;
+
   const [bikeDetail, setBikeDetails] = useState('');
   const { bikes } = bikeData;
   const setId = (e) => {
     const id = e.target.value;
-    const selectedBike = bikes.find((bike) => bike.id === id);
+    const selectedBike = bikes.find((bike) => bike.id === +id);
     setBikeDetails(selectedBike);
   };
+
+  const checkReservation = (id) => {
+    const check = reservations.find((reservation) => reservation.bike_id === id);
+    if (check) {
+      return true;
+    }
+    return false;
+  };
+
+  const userData = localStorage.getItem('bookBikeUser');
+  const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
+
   const submitData = (e) => {
     e.preventDefault();
-    const city = document.getElementById('city').value;
     const date = document.getElementById('date').value;
     const data = {
-      reserveId: uuid(),
-      bike: bikeDetail,
-      city,
+      user_id: user.userId,
+      bike_id: bikeDetail.id,
       date,
       reserve: true,
     };
     dispatch(addReservation(data));
-    dispatch(updateBike(bikeDetail.id));
-    document.getElementById('city').value = '';
     document.getElementById('date').value = '';
   };
   return (
@@ -36,56 +51,20 @@ const ReserveBike = () => {
         <div className="flex flex-col w-full h-full space-x-3 px-3 py-3 bg-green-700 bg-opacity-70 justify-center items-center">
           {bikeDetail && (
             <div className="flex flex-col justify-center items-center gap-2">
-              <img
-                src={bikeDetail.picture}
-                alt="bike"
-                className="w-3/4 sm:w-1/4"
-              />
-              <h1 className="font-bold text-2xl py-5 text-white">
-                {bikeDetail.name}
-              </h1>
-              <p className="sm:w-3/4 sm:text-center sm:h-60 text-white h-3/4 w-full text-justify">
-                {bikeDetail.description}
-              </p>
+              <img src={bikeDetail.bike_image} alt="bike" className="w-3/4 sm:w-1/4" />
+              <h1 className="font-bold text-2xl py-5 text-white">{bikeDetail.name}</h1>
             </div>
           )}
+
           <div className="flex flex-col w-full h-full justify-center items-center gap-2">
-            <select
-              onChange={setId}
-              className="bg-green-500 placeholder-gray-100 w-3/4 sm:w-1/4  hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              <option value="0">Select Bike</option>
+            <select onChange={setId} className="bg-green-500 placeholder-gray-100 w-3/4 sm:w-1/4  hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+              <option defaultValue="none">Select Bike</option>
               {bikes.map((bike) => (
-                <option key={bike.id} value={bike.id}>
-                  {bike.name}
-                </option>
+                <option key={bike.id} value={bike.id}>{bike.name}</option>
               ))}
             </select>
-            <input
-              type="text"
-              required
-              placeholder="city"
-              name="city"
-              id="city"
-              className="bg-green-500 placeholder-gray-100 w-3/4 sm:w-1/4  hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-            />
-            <input
-              type="date"
-              required
-              name="date"
-              id="date"
-              className="bg-green-500 w-3/4 sm:w-1/4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-            />
-            {bikeDetail.reserve === true ? (
-              <p className="text-white">This bike is already reserved</p>
-            ) : (
-              <button
-                type="submit"
-                className="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-              >
-                Reserve
-              </button>
-            )}
+            <input type="date" required name="date" id="date" className="bg-green-500 w-3/4 sm:w-1/4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" />
+            {checkReservation(bikeDetail.id) ? (<img src="https://media.istockphoto.com/id/828928236/vector/red-rubber-stamp-icon-on-transparent-background.jpg?b=1&s=612x612&w=0&k=20&c=gP3E8Zi5YAaKcqdH7ZOsrDdNzHURvQ2gJNdZORjH9PA=" className="h-10 w-30" alt="reserved" />) : <button type="submit" className="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Reserve</button>}
           </div>
         </div>
       </form>

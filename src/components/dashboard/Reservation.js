@@ -1,8 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import uuid from 'react-uuid';
-import { updateBike } from '../../redux/reducer/bikeReducer';
+
 import { addReservation } from '../../redux/reducer/reservationReducer';
 
 const Reservation = () => {
@@ -10,61 +9,46 @@ const Reservation = () => {
   const dispatch = useDispatch();
   const bikeData = useSelector((state) => state.bikeReducer);
   const { bike } = bikeData;
-  const reserveBike = () => {
-    dispatch(updateBike(bike.id));
-  };
+  const reservationData = useSelector((state) => state.reservationReducer);
+  const { reservations } = reservationData;
+  const userData = localStorage.getItem('bookBikeUser');
+  const user = JSON.parse(userData);
+  if (!user) {
+    navigate('/');
+  }
   const submitData = (e) => {
     e.preventDefault();
-    const city = document.getElementById('city').value;
     const date = document.getElementById('date').value;
     const data = {
-      reserveId: uuid(),
-      bike,
-      city,
+      user_id: user.userId,
+      bike_id: bike.id,
       date,
       reserve: true,
     };
-    reserveBike();
     dispatch(addReservation(data));
-    document.getElementById('city').value = '';
     document.getElementById('date').value = '';
     navigate('/user/dashboard');
   };
+
+  const checkReservation = (id) => {
+    const check = reservations.find((reservation) => reservation.bike_id === id);
+    if (check) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <div className="w-full h-full bg-image border border-black">
       <form className="w-full h-full" onSubmit={submitData}>
         <div className="flex flex-col w-full h-full space-x-3 px-3 py-3 bg-green-700 bg-opacity-70 justify-center items-center">
+          <img src={bike.bike_image} alt="bike" className="w-3/4 sm:w-1/4  mt-4" />
           <h1 className="font-bold text-2xl py-5 text-white">{bike.name}</h1>
           <hr />
-          <p className="sm:w-3/4 sm:text-center sm:h-60 text-white h-3/4 w-full text-justify">
-            {bike.description}
-          </p>
           <div className="flex flex-col w-full h-full justify-center items-center">
-            <input
-              type="text"
-              required
-              placeholder="city"
-              name="city"
-              id="city"
-              className="bg-green-500 placeholder-gray-100 w-3/4 sm:w-1/4  hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-            />
-            <input
-              type="date"
-              required
-              name="date"
-              id="date"
-              className="bg-green-500 mt-4 w-3/4 sm:w-1/4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-            />
-            {bike.reserve === true ? (
-              <p className="text-white">This bike is already reserved</p>
-            ) : (
-              <button
-                type="submit"
-                className="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-              >
-                Reserve
-              </button>
-            )}
+            <input type="date" required name="date" id="date" className="bg-green-500 mt-4 w-3/4 sm:w-1/4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" />
+            {checkReservation(bike.id) ? (<img src="https://media.istockphoto.com/id/828928236/vector/red-rubber-stamp-icon-on-transparent-background.jpg?b=1&s=612x612&w=0&k=20&c=gP3E8Zi5YAaKcqdH7ZOsrDdNzHURvQ2gJNdZORjH9PA=" className="h-10 w-30" alt="reserved" />) : <button type="submit" className="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Reserve</button>}
+
           </div>
         </div>
       </form>

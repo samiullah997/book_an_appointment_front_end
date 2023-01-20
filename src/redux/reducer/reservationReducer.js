@@ -1,4 +1,10 @@
+/* eslint-disable max-len */
 import { createAction } from '@reduxjs/toolkit';
+import {
+  deleteReserveBike,
+  fetchReserveBike,
+  reserveBike,
+} from '../../api/BikeAppi';
 
 const initiaState = {
   reservations: [],
@@ -44,11 +50,6 @@ const reservationReducer = (state = initiaState, action) => {
       };
     }
     case 'REMOVE_RESERVATION': {
-      const index = state.reservations.findIndex(
-        (reservation) => reservation.id !== action.payload,
-      );
-      const newArray = [...state.reservations];
-      newArray[index].delete = false;
       return {
         ...state,
         reservations: state.reservations.filter(
@@ -60,16 +61,18 @@ const reservationReducer = (state = initiaState, action) => {
       return state;
   }
 };
-export const fetchReservations = (allReservations) => async (dispatch) => {
-  // const reservations = await fetchAllReservations();
-  initiaState.reservations.push(allReservations);
+export const fetchReservations = () => async (dispatch) => {
+  const reservations = await fetchReserveBike();
+  initiaState.reservations = reservations;
   dispatch(ALL_RESERVATIONS(initiaState.reservations));
 };
 export const addReservation = (reservationData) => async (dispatch) => {
   dispatch(ADD_RESERVATION(reservationData));
+  await reserveBike(reservationData);
 };
 export const removeReservation = (id) => async (dispatch) => {
   dispatch(REMOVE_RESERVATION(id));
+  await deleteReserveBike(id);
 };
 export const updateReservation = (id) => async (dispatch) => {
   dispatch(UPDATE_RESERVATION(id));
