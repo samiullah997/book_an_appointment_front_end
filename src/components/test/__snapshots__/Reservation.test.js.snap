@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservations renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="w-full h-full bg-image border border-black"
+      >
+        <form
+          class="w-full h-full"
+        >
+          <div
+            class="flex flex-col w-full h-full space-x-3 px-3 py-3 bg-green-700 bg-opacity-70 justify-center items-center"
+          >
+            <img
+              alt="bike"
+              class="w-3/4 sm:w-1/4  mt-4"
+            />
+            <h1
+              class="font-bold text-2xl py-5 text-white"
+            />
+            <hr />
+            <div
+              class="flex flex-col w-full h-full justify-center items-center"
+            >
+              <input
+                class="bg-green-500 mt-4 w-3/4 sm:w-1/4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+                id="date"
+                name="date"
+                required=""
+                type="date"
+              />
+              <button
+                class="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+                type="submit"
+              >
+                Reserve
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="w-full h-full bg-image border border-black"
+    >
+      <form
+        class="w-full h-full"
+      >
+        <div
+          class="flex flex-col w-full h-full space-x-3 px-3 py-3 bg-green-700 bg-opacity-70 justify-center items-center"
+        >
+          <img
+            alt="bike"
+            class="w-3/4 sm:w-1/4  mt-4"
+          />
+          <h1
+            class="font-bold text-2xl py-5 text-white"
+          />
+          <hr />
+          <div
+            class="flex flex-col w-full h-full justify-center items-center"
+          >
+            <input
+              class="bg-green-500 mt-4 w-3/4 sm:w-1/4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+              id="date"
+              name="date"
+              required=""
+              type="date"
+            />
+            <button
+              class="bg-green-500 mt-4 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+              type="submit"
+            >
+              Reserve
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

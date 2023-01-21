@@ -57,8 +57,8 @@ const ReserveBike = () => {
           )}
 
           <div className="flex flex-col w-full h-full justify-center items-center gap-2">
-            <select onChange={setId} className="bg-green-500 placeholder-gray-100 w-3/4 sm:w-1/4  hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
-              <option defaultValue="none">Select Bike</option>
+            <select onChange={setId} defaultValue="DEFAULT" className="bg-green-500 placeholder-gray-100 w-3/4 sm:w-1/4  hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+              <option disabled value="DEFAULT">Select Bike</option>
               {bikes.map((bike) => (
                 <option key={bike.id} value={bike.id}>{bike.name}</option>
               ))}

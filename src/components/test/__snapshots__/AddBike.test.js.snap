@@ -1,0 +1,382 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddBike renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="w-full h-full"
+      >
+        <div
+          class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50"
+        >
+          <div>
+            <a
+              href="/"
+            >
+              <h3
+                class="text-4xl font-bold text-purple-600"
+              >
+                Add Bike Details
+              </h3>
+            </a>
+            <div
+              class="flex flex-row justify-center items-center text-2xl font-bold text-green-700 mt-4"
+            />
+          </div>
+          <div
+            class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg"
+          >
+            <form>
+              <div>
+                <div
+                  class="block text-sm font-medium text-gray-700 undefined"
+                >
+                  Picture
+                </div>
+                <div
+                  class="flex flex-col items-start"
+                >
+                  <input
+                    class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="picture"
+                    placeholder="url"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div>
+                <div
+                  class="block text-sm font-medium text-gray-700 undefined"
+                >
+                  Name
+                </div>
+                <div
+                  class="flex flex-col items-start"
+                >
+                  <input
+                    class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="name"
+                    placeholder="Honda125"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="mt-4"
+              >
+                <div
+                  class="block text-sm font-medium text-gray-700 undefined"
+                >
+                  Brand
+                </div>
+                <div
+                  class="flex flex-col items-start"
+                >
+                  <input
+                    class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="model"
+                    placeholder="Bike Brand"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="mt-4"
+              >
+                <div
+                  class="block text-sm font-medium text-gray-700 undefined"
+                >
+                  Bike Type
+                </div>
+                <div
+                  class="flex flex-col items-start"
+                >
+                  <input
+                    class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="engin_capacity"
+                    placeholder="Bike Type"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="mt-4"
+              >
+                <div
+                  class="block text-sm font-medium text-gray-700 undefined"
+                >
+                  Price
+                </div>
+                <div
+                  class="flex flex-col items-start"
+                >
+                  <input
+                    class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="price"
+                    placeholder="$200"
+                    required=""
+                    type="number"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="mt-4"
+              >
+                <div
+                  class="block text-sm font-medium text-gray-700 undefined"
+                >
+                  Description
+                </div>
+                <div
+                  class="flex flex-col items-start"
+                >
+                  <textarea
+                    class="px-2 block w-full h-28 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    name="description"
+                    placeholder="description here...."
+                    required=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center mt-4"
+              >
+                <button
+                  class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
+                  type="submit"
+                >
+                  Add Bike
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="w-full h-full"
+    >
+      <div
+        class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0 bg-gray-50"
+      >
+        <div>
+          <a
+            href="/"
+          >
+            <h3
+              class="text-4xl font-bold text-purple-600"
+            >
+              Add Bike Details
+            </h3>
+          </a>
+          <div
+            class="flex flex-row justify-center items-center text-2xl font-bold text-green-700 mt-4"
+          />
+        </div>
+        <div
+          class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-md sm:rounded-lg"
+        >
+          <form>
+            <div>
+              <div
+                class="block text-sm font-medium text-gray-700 undefined"
+              >
+                Picture
+              </div>
+              <div
+                class="flex flex-col items-start"
+              >
+                <input
+                  class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  name="picture"
+                  placeholder="url"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="block text-sm font-medium text-gray-700 undefined"
+              >
+                Name
+              </div>
+              <div
+                class="flex flex-col items-start"
+              >
+                <input
+                  class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  name="name"
+                  placeholder="Honda125"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="mt-4"
+            >
+              <div
+                class="block text-sm font-medium text-gray-700 undefined"
+              >
+                Brand
+              </div>
+              <div
+                class="flex flex-col items-start"
+              >
+                <input
+                  class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  name="model"
+                  placeholder="Bike Brand"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="mt-4"
+            >
+              <div
+                class="block text-sm font-medium text-gray-700 undefined"
+              >
+                Bike Type
+              </div>
+              <div
+                class="flex flex-col items-start"
+              >
+                <input
+                  class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  name="engin_capacity"
+                  placeholder="Bike Type"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="mt-4"
+            >
+              <div
+                class="block text-sm font-medium text-gray-700 undefined"
+              >
+                Price
+              </div>
+              <div
+                class="flex flex-col items-start"
+              >
+                <input
+                  class="px-2 block w-full h-10 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  name="price"
+                  placeholder="$200"
+                  required=""
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="mt-4"
+            >
+              <div
+                class="block text-sm font-medium text-gray-700 undefined"
+              >
+                Description
+              </div>
+              <div
+                class="flex flex-col items-start"
+              >
+                <textarea
+                  class="px-2 block w-full h-28 mt-1 border border-gray-600 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  name="description"
+                  placeholder="description here...."
+                  required=""
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center mt-4"
+            >
+              <button
+                class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md active:bg-gray-900 false"
+                type="submit"
+              >
+                Add Bike
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

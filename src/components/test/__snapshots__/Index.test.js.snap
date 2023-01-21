@@ -32,7 +32,7 @@ exports[`should match snapshot of the Index component 1`] = `
             Enter Login Details
           </span>
           <span
-            className="text-xl text-green-700"
+            className="text-xl text-red-700 font-bold mt-4"
           />
         </div>
         <form
