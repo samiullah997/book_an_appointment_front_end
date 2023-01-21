@@ -10,10 +10,12 @@ const LogIn = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassowrd] = useState('');
+  const [loading, setLoading] = useState(false);
   const state = useSelector((state) => state.UserReducer);
   const { loggedIn } = state;
   const loginUser = (e) => {
     e.preventDefault();
+    setLoading(true);
     if (email === '' || password === '') return;
     const newUser = {
       email,
@@ -26,10 +28,12 @@ const LogIn = () => {
 
   useEffect(() => {
     if (loggedIn === 'in') {
+      setLoading(false);
       navigate('/user/dashboard', { replace: true });
     }
     if (loggedIn === 'err') {
-      setShowMessage('Your Cradential is not correct.');
+      setLoading(false);
+      setShowMessage('Your credential is not correct.');
       navigate('/', { replace: true });
     }
   }, [state]);
@@ -42,7 +46,7 @@ const LogIn = () => {
             <img src="./favicon.png" width="150" alt="" />
             <h1 className="mb-2 text-2xl">Buy Bikes</h1>
             <span className="text-white">Enter Login Details</span>
-            <span className="text-xl text-green-700">{showMessage}</span>
+            <span className="text-xl text-red-700 font-bold mt-4">{showMessage}</span>
           </div>
           <form onSubmit={loginUser}>
             <div className="mb-4 text-lg">
@@ -69,12 +73,22 @@ const LogIn = () => {
               />
             </div>
             <div className="mt-8 flex justify-center text-lg text-black">
-              <button
-                type="submit"
-                className="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
-              >
-                Login
-              </button>
+              {loading ? (
+                <div className="spinner-border text-primary" role="status">
+                  <span className="visually-hidden">
+                    {' '}
+                    <img src="https://i.stack.imgur.com/kOnzy.gif" className="w-10 h-10" alt="loading" />
+                  </span>
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  className="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+                >
+                  Login
+                </button>
+              )}
+
             </div>
           </form>
           <p className="mt-8 text-xs font-light text-center text-gray-700">

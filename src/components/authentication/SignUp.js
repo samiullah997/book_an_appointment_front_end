@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import SignupDetailsApi from '../../redux/reducer/user';
 
 const SignUp = () => {
+  const [loading, setLoading] = useState(false);
   const [showMessage, setShowMessage] = useState('');
-  function showAlert() {
-    setShowMessage('Signed Up Successfully');
-  }
   const dispatch = useDispatch();
   const state = useSelector((state) => state.UserReducer);
   const { signedUp } = state;
@@ -19,7 +17,7 @@ const SignUp = () => {
 
   const registerUser = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     if (email === '' || name === '' || password === '') return;
     const newUser = {
       email,
@@ -38,7 +36,12 @@ const SignUp = () => {
 
   useEffect(() => {
     if (signedUp === 'up') {
-      setTimeout(() => showAlert(), 3000);
+      setLoading(false);
+      setShowMessage('Signed Up Successfully');
+    } else if (signedUp === 'down') {
+      setLoading(false);
+      setShowMessage('Email Already Exists');
+      setTimeout(() => setShowMessage(''), 3000);
     }
   }, [state]);
 
@@ -50,7 +53,7 @@ const SignUp = () => {
             <img src="./favicon.png" width="150" alt="" />
             <h1 className="mb-2 text-2xl">Buy Bikes</h1>
             <span className="text-white">Enter Login Details</span>
-            <span className="text-xl text-green-700">{showMessage}</span>
+            <span className="text-xl text-green-800">{showMessage}</span>
           </div>
           <form onSubmit={registerUser}>
             <div className="mb-4 text-lg">
@@ -73,7 +76,7 @@ const SignUp = () => {
               <input className="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md" required onChange={(e) => setConfirmPassowrd(e.target.value)} value={confirmPassword} type="Password" name="confirm_password" placeholder="confirm password" />
             </div>
             <div className="mt-8 flex justify-center text-lg text-black">
-              <button type="submit" className="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Register</button>
+              {loading ? (<img src="https://i.stack.imgur.com/kOnzy.gif" className="w-10 h-10" alt="loading" />) : (<button type="submit" className="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Register</button>) }
             </div>
           </form>
           <p className="mt-8 text-xs font-light text-center text-gray-700">
