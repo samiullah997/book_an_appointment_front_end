@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.bg-image {
+  background-image: url('https://i.pinimg.com/originals/e6/50/59/e65059e74ce37ebffd77250a59255873.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-fit: cover;
+}

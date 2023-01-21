@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-image"
+      >
+        <div
+          class="rounded-xl bg-white bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8"
+        >
+          <div
+            class="text-white"
+          >
+            <div
+              class="mb-8 flex flex-col items-center"
+            >
+              <img
+                alt=""
+                src="./favicon.png"
+                width="150"
+              />
+              <h1
+                class="mb-2 text-2xl"
+              >
+                Buy Bikes
+              </h1>
+              <span
+                class="text-white"
+              >
+                Enter Login Details
+              </span>
+              <span
+                class="text-xl text-green-800"
+              />
+            </div>
+            <form>
+              <div
+                class="mb-4 text-lg"
+              >
+                <input
+                  class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                  name="name"
+                  placeholder="David John"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4 text-lg"
+              >
+                <input
+                  class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                  name="address"
+                  placeholder="username"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4 text-lg"
+              >
+                <input
+                  class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                  name="email"
+                  placeholder="john@gmail.com"
+                  required=""
+                  type="email"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4 text-lg"
+              >
+                <input
+                  class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                  name="password"
+                  placeholder="password"
+                  required=""
+                  type="Password"
+                  value=""
+                />
+              </div>
+              <div
+                class="mb-4 text-lg"
+              >
+                <input
+                  class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                  name="confirm_password"
+                  placeholder="confirm password"
+                  required=""
+                  type="Password"
+                  value=""
+                />
+              </div>
+              <div
+                class="mt-8 flex justify-center text-lg text-black"
+              >
+                <button
+                  class="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+                  type="submit"
+                >
+                  Register
+                </button>
+              </div>
+            </form>
+            <p
+              class="mt-8 text-xs font-light text-center text-gray-700"
+            >
+               
+              Already Register?
+               
+              <a
+                class="font-medium text-purple-600 hover:underline"
+                href="/"
+              >
+                login
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-image"
+    >
+      <div
+        class="rounded-xl bg-white bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8"
+      >
+        <div
+          class="text-white"
+        >
+          <div
+            class="mb-8 flex flex-col items-center"
+          >
+            <img
+              alt=""
+              src="./favicon.png"
+              width="150"
+            />
+            <h1
+              class="mb-2 text-2xl"
+            >
+              Buy Bikes
+            </h1>
+            <span
+              class="text-white"
+            >
+              Enter Login Details
+            </span>
+            <span
+              class="text-xl text-green-800"
+            />
+          </div>
+          <form>
+            <div
+              class="mb-4 text-lg"
+            >
+              <input
+                class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                name="name"
+                placeholder="David John"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="mb-4 text-lg"
+            >
+              <input
+                class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                name="address"
+                placeholder="username"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="mb-4 text-lg"
+            >
+              <input
+                class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                name="email"
+                placeholder="john@gmail.com"
+                required=""
+                type="email"
+                value=""
+              />
+            </div>
+            <div
+              class="mb-4 text-lg"
+            >
+              <input
+                class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                name="password"
+                placeholder="password"
+                required=""
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="mb-4 text-lg"
+            >
+              <input
+                class="rounded-3xl border-none bg-black bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-75 shadow-lg outline-none backdrop-blur-md"
+                name="confirm_password"
+                placeholder="confirm password"
+                required=""
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="mt-8 flex justify-center text-lg text-black"
+            >
+              <button
+                class="rounded-3xl bg-black bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600"
+                type="submit"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+          <p
+            class="mt-8 text-xs font-light text-center text-gray-700"
+          >
+             
+            Already Register?
+             
+            <a
+              class="font-medium text-purple-600 hover:underline"
+              href="/"
+            >
+              login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

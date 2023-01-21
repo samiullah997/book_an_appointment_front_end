@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="container flex flex-row w-full m-28"
+      >
+        <div
+          class="container flex justify-center py-2  items-center"
+        >
+          <img
+            alt="details"
+            class="w-full h-full"
+          />
+        </div>
+        <div
+          class="conatiner w-full h-auto flex flex-col items-end py-4  px-30"
+        >
+          <h1
+            class="text-2xl font-bold py-4"
+          />
+          <div
+            class="flex flex-row justify-between w-60 border bg-gray-100 px-2 py-2"
+          >
+            <span>
+              Price
+            </span>
+            <span>
+              $
+            </span>
+          </div>
+          <h1
+            class="text-2xl font-bold py-2  px-4"
+          />
+          <p
+            class="text-2xl font-bold py-2  px-4"
+          />
+          <a
+            href="/user/Reservation"
+          >
+            <button
+              class="bg-green-500 mt-40 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+              type="button"
+            >
+              Reserve
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container flex flex-row w-full m-28"
+    >
+      <div
+        class="container flex justify-center py-2  items-center"
+      >
+        <img
+          alt="details"
+          class="w-full h-full"
+        />
+      </div>
+      <div
+        class="conatiner w-full h-auto flex flex-col items-end py-4  px-30"
+      >
+        <h1
+          class="text-2xl font-bold py-4"
+        />
+        <div
+          class="flex flex-row justify-between w-60 border bg-gray-100 px-2 py-2"
+        >
+          <span>
+            Price
+          </span>
+          <span>
+            $
+          </span>
+        </div>
+        <h1
+          class="text-2xl font-bold py-2  px-4"
+        />
+        <p
+          class="text-2xl font-bold py-2  px-4"
+        />
+        <a
+          href="/user/Reservation"
+        >
+          <button
+            class="bg-green-500 mt-40 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+            type="button"
+          >
+            Reserve
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
