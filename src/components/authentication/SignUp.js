@@ -84,7 +84,7 @@ const SignUp = () => {
             Already Register?
             {' '}
             <a
-              href="/"
+              href="./"
               className="font-medium text-purple-600 hover:underline"
             >
               login
