@@ -70,7 +70,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://63cb85d5bf022d31dacf27dd--fancy-bublanina-3df86a.netlify.app/)
+- [Live Demo Link](https://deploy-preview-13--gilded-begonia-47c85d.netlify.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
