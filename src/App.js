@@ -24,7 +24,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LogIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/register" element={<SignUp />} />
           <Route path="/user/Reservation" element={<Reservation />} />
           <Route path="/user/ReserveBike" element={<ReserveBike />} />
           <Route element={<SidebarLayout />}>
